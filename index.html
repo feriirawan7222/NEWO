@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEXTION AI · Created by Fery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="intro">
+  <div class="intro-content">
+    <div class="intro-icon">⚡</div>
+    <div class="intro-title">VEXTION</div>
+    <div class="intro-sub">AI Assistant</div>
+    <div class="intro-line"></div>
+    <div class="intro-creator">Created by Fery</div>
+  </div>
+</div>
+
+<div id="app">
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">⚡ VEXTION</div>
+      <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
+    </div>
+    <button class="back-to-chat-btn" id="backToChatBtn" onclick="backToCurrentChat()" style="display: none;">← Back to Active Chat</button>
+    <div class="sidebar-title">History</div>
+    <div id="historyList"></div>
+    <div class="sidebar-footer">
+      <div class="footer-text">VEXTION AI · Fery</div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div class="topbar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="model-badge">
+        <span class="badge-dot"></span>
+        <span>VEXTION · AI</span>
+      </div>
+      <div class="topbar-title">VEXTION</div>
+      <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙</button>
+    </div>
+
+    <div class="chat-container">
+      <div id="messages"></div>
+      <div id="inputArea">
+        <div class="input-wrapper">
+          <div id="filePreview"></div>
+          <div class="input-row">
+            <textarea id="input" placeholder="Ask VEXTION anything... tugas sekolah, programming, dll..." rows="1"></textarea>
+            <div class="input-buttons">
+              <button class="input-btn" onclick="document.getElementById('fileInput').click()">📎</button>
+              <button class="input-btn" onclick="document.getElementById('imageInput').click()">🖼</button>
+              <button id="sendBtn" onclick="sendMessage()">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<input type="file" id="imageInput" accept="image/*" style="display:none">
+<input type="file" id="fileInput" accept=".txt,.md,.json,.csv,.js,.py,.html,.css" style="display:none">
+<div id="toast"></div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
